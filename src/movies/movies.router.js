@@ -2,6 +2,9 @@ const router = require("express").Router();
 const controller = require("./movies.controller");
 const methodNotAllowed = require("./../errors/methodNotAllowed");
 
+const theatersRouter = require("./../theaters/theaters.router");
+router.use("/:movieId/theaters", controller.ifMovieExists, theatersRouter);
+
 router
     .route("/:movieId/reviews")
     .get(controller.listReviews)
