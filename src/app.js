@@ -12,5 +12,12 @@ const reviewsRouter = require("./reviews/reviews.router")
 const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler")
 
+app.use(cors());
+app.use(express.json());
+
+app.use("/movies", moviesRouter);
+
+app.use(notFound);
+app.use(errorHandler);
 
 module.exports = app;
