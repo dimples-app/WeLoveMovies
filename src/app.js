@@ -5,7 +5,7 @@ const cors = require("cors");
 
 // Require Router 
 const moviesRouter = require("./movies/movies.router");
-const theatersRouters = require("./theaters/theaters.router")
+const theatersRouter = require("./theaters/theaters.router")
 const reviewsRouter = require("./reviews/reviews.router")
 
 //require error
@@ -17,6 +17,7 @@ app.use(express.json());
 
 app.use("/movies", moviesRouter);
 app.use("/reviews", reviewsRouter);
+app.use("/theaters", theatersRouter)
 
 app.use(notFound);
 app.use(errorHandler);
